@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Limbo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+
+    
+  </head>
+  <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <button onclick="window.location = 'https://venice-and-death.github.io/2000'">To the Next Circle</button>
+    <button onclick="window.location = 'https://venice-and-death.github.io/1102/surprisesurpise.html'">Collages</button>
+    
+  </div>
+    
+  <body>
+   
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-image
+          position="0 0 0"
+          scale="1 1.4 1"
+          src="https://venice-and-death.github.io/circles/01_limbo.jpg"
+          class="clickable"
+          gesture-handler
+        >
+        </a-image>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
